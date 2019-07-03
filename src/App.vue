@@ -4,10 +4,21 @@
       <div>
         <b-nav tabs>
           <b-nav-item active>Active</b-nav-item>
-          <b-nav-item>Link</b-nav-item>
+          <b-nav-item-dropdown text="Authors" toggle-class="nav-link-custom">
+            <b-dropdown-item :key="item.id" v-for="item in authors">{{item.author}}</b-dropdown-item>
+          </b-nav-item-dropdown>
+          <b-nav-item-dropdown text="Genres" toggle-class="nav-link-custom">
+            <b-dropdown-item :key="item.id" v-for="item in genres">{{item.genre}}</b-dropdown-item>
+          </b-nav-item-dropdown>
           <b-nav-item>Another Link</b-nav-item>
           <b-nav-item disabled>Disabled</b-nav-item>
         </b-nav>
+      </div>
+      <div class="col-12 pt-2">
+        <router-view/>
+        <!-- Todo: different blocks
+        <AllBooks></AllBooks>
+        <component :is="'AllBooks'"></component> -->
       </div>
     </div>
   </div>
@@ -18,6 +29,7 @@ export default {
   name: 'app',
   data: () => {
     return {
+      view: 'AllBooks',
       authors: [],
       genres: []
     }
