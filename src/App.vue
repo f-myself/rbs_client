@@ -15,7 +15,7 @@
         </b-nav>
       </div>
       <div class="col-12 pt-2">
-        <router-view/>
+        <router-view></router-view>
         <!-- Todo: different blocks
         <AllBooks></AllBooks>
         <component :is="'AllBooks'"></component> -->
@@ -37,8 +37,8 @@ export default {
   methods: {
     getAuthors: function () {
       // fetch('api/authors/', {method: "GET"})
-      // fetch('http://rbs.loc/Server/app/api/authors/', {method: "GET"})
-      fetch('http://192.168.0.15/~user6/rbs/Server/app/api/authors/', {method: "GET"})
+      fetch('http://rbs.loc/Server/app/api/authors/', {method: "GET"})
+      // fetch('http://192.168.0.15/~user6/rbs/Server/app/api/authors/', {method: "GET"})
         .then((response) => response.json())
         .then((data) => {
           data.forEach(value => {
@@ -48,8 +48,8 @@ export default {
     },
     getGenres: function () {
     // fetch('api/genres/', {method: "GET"})
-    // fetch('http://rbs.loc/Server/app/api/genres/', {method: "GET"})
-      fetch('http://192.168.0.15/~user6/rbs/Server/app/api/genres/', {method: "GET"})
+    fetch('http://rbs.loc/Server/app/api/genres/', {method: "GET"})
+    // fetch('http://192.168.0.15/~user6/rbs/Server/app/api/genres/', {method: "GET"})
         .then((response) => response.json())
         .then((data) => {
           data.forEach(value => {

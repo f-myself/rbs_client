@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{item.title}}</h5>
                     <p class="card-text">{{item.description}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <router-link :to="'/book/' + item.id" class="btn btn-primary">Go somewhere</router-link>
                 </div>
             </div>
         </div>
@@ -43,9 +43,9 @@ export default {
     },
     methods: {
         getAllBooks: function() {
-            // fetch('api/authors/', {method: "GET"})
-            // fetch('http://rbs.loc/Server/app/api/authors/', {method: "GET"})
-            fetch('http://192.168.0.15/~user6/rbs/Server/app/api/books/', {method: "GET"})
+            // fetch('api/books/', {method: "GET"})
+            fetch('http://rbs.loc/Server/app/api/books/', {method: "GET"})
+            // fetch('http://192.168.0.15/~user6/rbs/Server/app/api/books/', {method: "GET"})
             .then((response) => response.json())
             .then((data) => {
             data.forEach(value => {
