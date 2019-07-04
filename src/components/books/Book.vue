@@ -1,7 +1,15 @@
 <template>
-    <div class="row">
-        Hello
-        {{$route.params.id}}
+    <div class="row pt-4">
+        <div class="col-6 mb-4">
+          <img src="../../assets/book.jpg" class="img-fluid" style="max-height:400px" alt="">
+        </div>
+        <div class="col-6 mb-4">
+          <div class="p-4">
+            <h1>{{bookInfo[0].title}}</h1>
+            <h5>
+            </h5>
+          </div>
+        </div>
     </div>
 </template>
 
@@ -12,6 +20,7 @@ export default {
     data: () => {
       return {
         bookInfo: [],
+        loading: false
       }
     },
     methods: {
